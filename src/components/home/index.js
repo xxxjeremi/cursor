@@ -19,16 +19,16 @@ const Dropdown = ({ buttonLabel, items, isOpen, onToggle }) => (
   <div className="relative">
     <button
       onClick={onToggle}
-      className="bg-white bg-opacity-20 text-white px-4 py-2 rounded hover:bg-opacity-30 transition-all duration-200"
+      className="text-white px-4 py-2 rounded hover:bg-opacity-30 transition-all duration-200 font-semibold"
     >
       {buttonLabel}
     </button>
     {isOpen && (
-      <div className="absolute left-0 mt-2 w-48 bg-white bg-opacity-90 rounded-lg shadow-lg py-1 z-10">
+      <div className="absolute left-0 mt-2 w-48 bg-[#161b43] rounded-lg shadow-lg py-1 z-10">
         {items.map((item, index) => (
           <button
             key={index}
-            className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200 transition-all duration-150"
+            className="block w-full text-left px-4 py-2 text-white hover:bg-gray-700 transition-all duration-150"
             onClick={item.onClick}
           >
             {item.label}
@@ -133,19 +133,19 @@ export default function HomePage() {
       />
       <div className="absolute top-4 right-36 z-[3] flex space-x-2">
         <Dropdown
-          buttonLabel="A блок"
+          buttonLabel="A БЛОК"
           items={A_BLOCK_ITEMS}
           isOpen={openDropdown === "a"}
           onToggle={() => toggleDropdown("a")}
         />
         <Dropdown
-          buttonLabel="B блок"
+          buttonLabel="Б БЛОК"
           items={B_BLOCK_ITEMS}
           isOpen={openDropdown === "b"}
           onToggle={() => toggleDropdown("b")}
         />
         <Dropdown
-          buttonLabel="Байршил"
+          buttonLabel="БАЙРШИЛ"
           items={LOCATION_ITEMS}
           isOpen={openDropdown === "location"}
           onToggle={() => toggleDropdown("location")}
